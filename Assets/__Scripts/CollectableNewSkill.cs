@@ -8,12 +8,12 @@ public class CollectableNewSkill : MonoBehaviour {
     // Update is called once per frame
 
     void Awake(){
-        gos = GameObject.FindGameObjectsWithTag("Skeleton");
-        gos2 = GameObject.FindGameObjectsWithTag("Ghost");
+        
     }
 
     void Update() {
-
+        gos = GameObject.FindGameObjectsWithTag("Skeleton");
+        gos2 = GameObject.FindGameObjectsWithTag("Ghost");
         if (Input.GetKeyDown(KeyCode.Tab)) {
             DestroyAll();
         }
