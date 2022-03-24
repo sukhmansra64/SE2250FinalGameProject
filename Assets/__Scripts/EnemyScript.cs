@@ -40,4 +40,15 @@ public class EnemyScript : MonoBehaviour {
     void DestroyGO(){
         Destroy(this.gameObject);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        GameObject go = collision.gameObject;
+        if (go.tag == "HeroProjectile")
+        {
+            TakeDamage(50);
+            Debug.Log("Hit enemy");
+            Destroy(go);
+        }
+    }
 }

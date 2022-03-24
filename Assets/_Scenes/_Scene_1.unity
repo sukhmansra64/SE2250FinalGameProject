@@ -130,6 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 263048246, guid: ba8822f57adbb40b399405581a728adb, type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 263048246, guid: ba8822f57adbb40b399405581a728adb, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 263048246, guid: ba8822f57adbb40b399405581a728adb, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 288131256159044912, guid: ba8822f57adbb40b399405581a728adb, type: 3}
+      propertyPath: projectileSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 288131256159044912, guid: ba8822f57adbb40b399405581a728adb, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 6448025683241326646, guid: 7d9eaf73b98df2f418dc839d3ce0ae3e, type: 3}
     - target: {fileID: 288131256159044913, guid: ba8822f57adbb40b399405581a728adb, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -220,10 +240,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 27
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -456,6 +476,10 @@ PrefabInstance:
       propertyPath: Hero
       value: 
       objectReference: {fileID: 263048244}
+    - target: {fileID: 4485518368656582943, guid: cc0698ec3faadb9469c59fc7052173ef, type: 3}
+      propertyPath: projectileSpeed
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5754157813284800614, guid: cc0698ec3faadb9469c59fc7052173ef, type: 3}
       propertyPath: m_Name
       value: Ghost (2)
@@ -611,6 +635,10 @@ PrefabInstance:
       propertyPath: Hero
       value: 
       objectReference: {fileID: 263048244}
+    - target: {fileID: 4485518368656582943, guid: cc0698ec3faadb9469c59fc7052173ef, type: 3}
+      propertyPath: projectileSpeed
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5754157813284800614, guid: cc0698ec3faadb9469c59fc7052173ef, type: 3}
       propertyPath: m_Name
       value: Ghost (1)
@@ -26708,6 +26736,14 @@ PrefabInstance:
       propertyPath: Hero
       value: 
       objectReference: {fileID: 263048244}
+    - target: {fileID: 4485518368656582943, guid: cc0698ec3faadb9469c59fc7052173ef, type: 3}
+      propertyPath: projectileSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 4485518368656582943, guid: cc0698ec3faadb9469c59fc7052173ef, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 3590414716947430237, guid: aed417b29858c31428fc890246f15061, type: 3}
     - target: {fileID: 5754157813284800614, guid: cc0698ec3faadb9469c59fc7052173ef, type: 3}
       propertyPath: m_Name
       value: Ghost

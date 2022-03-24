@@ -18,6 +18,9 @@ public class Player : MonoBehaviour {
     public Transform attackPoint;
     public LayerMask enemyLayers;
     public bool isDead = false;
+    public GameObject projectilePrefab;
+    public bool left;
+    public float projectileSpeed = 20f;
 
     // Awake is called when the script instance is being loaded
     void Awake() {
@@ -48,14 +51,20 @@ public class Player : MonoBehaviour {
         }
         if(horizontal<0){
             spriteRenderer.flipX=true;
+            left=true;
         }
         if(horizontal>0){
             spriteRenderer.flipX=false;
+            left=false;
         }
 
         //handles player attack
         if(Input.GetKeyDown(KeyCode.Space)){
             Attack();
+        }
+
+        if(Input.GetKeyDown(KeyCode.B)){
+            Fire(left);
         }
 
         //moves the player
@@ -122,6 +131,23 @@ public class Player : MonoBehaviour {
         }
     }
 
+    void Fire(bool left)
+    {
+        GameObject projGO = Instantiate<GameObject>(projectilePrefab);
+        projGO.transform.position = transform.position;
+        Rigidbody2D rigidB = projGO.GetComponent<Rigidbody2D>();
+
+        //Change this later depending on whether or not the enemy is facing the hero
+        if (!left)
+        {
+            rigidB.velocity = Vector3.right * projectileSpeed;
+        }
+        else if (left)
+        {
+            rigidB.velocity = Vector3.left * projectileSpeed;
+        }
+    }
+
     //teleport method
     void Teleport(float horizontal, float vertical) {
 
@@ -169,9 +195,9 @@ public class Player : MonoBehaviour {
 
     //method to handle collisions
     void OnCollisionEnter2D(Collision2D collision) {
-
+        GameObject otherGO = collision.gameObject;
         //when picking up the screenWipe collectable it gives the player an ability to destroy all enemies on the screen
-        if(collision.gameObject.tag == "screenWipe") {
+        if (collision.gameObject.tag == "screenWipe") {
             Destroy(collision.gameObject);
             this.GetComponent<CollectableNewSkill>().Activate();
         }
@@ -182,6 +208,12 @@ public class Player : MonoBehaviour {
 
         if(collision.gameObject.tag == "Skeleton") {
             TakeDamage(25);
+        }
+
+        if (otherGO.tag == "EnemyProjectile")
+        {
+            Destroy(otherGO);
+            TakeDamage(20);
         }
     }
 

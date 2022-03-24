@@ -395,10 +395,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 27
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -671,7 +671,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 5
 --- !u!1 &1262309899
 GameObject:
   m_ObjectHideFlags: 0
@@ -27380,6 +27380,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 288131256159044912, guid: ba8822f57adbb40b399405581a728adb, type: 3}
+      propertyPath: projectileSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 288131256159044912, guid: ba8822f57adbb40b399405581a728adb, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: 6448025683241326646, guid: 7d9eaf73b98df2f418dc839d3ce0ae3e, type: 3}
     - target: {fileID: 288131256159044913, guid: ba8822f57adbb40b399405581a728adb, type: 3}
       propertyPath: m_RootOrder
       value: 4
