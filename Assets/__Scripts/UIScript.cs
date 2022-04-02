@@ -14,16 +14,19 @@ public class UIScript : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start(){
-        //add code to make it so that it retrieves the health variable, and the chosen abilities from the player class
-        //then do something like:
-        //healthText.setText = "HP: " + playerClass.getHealth();
-        //set up properties in the player class
+        qAbilityText.text = "Q: " + Player.qAbility;
+        eAbilityText.text = "E: " + Player.eAbility;
+        shiftText.text = "Shift: " + Player.shift;
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         //same code from up above that way theres no need to update it in the player class
+        healthText.text = "HP: " + Player.health + "/100";
+        qAbilityText.text = "Q: " + Player.qAbility + "    " + Player.publicDamageCooldown + " s";
+        eAbilityText.text = "E: " + Player.eAbility + "    " + Player.publicInvincibilityCooldown + " s";
+        shiftText.text = "Shift: " + Player.shift + "    " + Player.publicTeleportCooldown + " s";
+
     }
 }

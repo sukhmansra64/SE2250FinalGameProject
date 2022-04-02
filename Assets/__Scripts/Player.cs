@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour {
 
     //variable declarations
+    public GameObject player;
     int playerDamage;
     float speed = 4;
-    float teleportCooldown, invincibilityCooldown, healthResetCooldown, damageBoostCooldown;
-    float playerHealth, playerHealthBeforeInvincibility;
+    private static float teleportCooldown, invincibilityCooldown, healthResetCooldown, damageBoostCooldown;   //might need to undo static and private
+    private static float playerHealth, playerHealthBeforeInvincibility;
     float attackRange = 1.2f;
     float attackRate = 2f;
     float nextAttackTime = 0f;
@@ -21,6 +22,9 @@ public class Player : MonoBehaviour {
     public GameObject projectilePrefab;
     public bool left;
     public float projectileSpeed = 20f;
+
+    //temporary variable that will need to be implemented in the children
+    private static string qAbilityPress = "Damage Boost", eAbilityPress = "Invincibility", shiftPress = "Teleport";
 
     // Awake is called when the script instance is being loaded
     void Awake() {
@@ -34,6 +38,9 @@ public class Player : MonoBehaviour {
         damageBoostCooldown = 0;
         healthResetCooldown = 1000000;
         invincibilityCooldown = 0;
+
+        //initiliazes the player object for use in other scripts
+        player = this.gameObject;
     }
 
     // Update is called once per frame
@@ -41,7 +48,7 @@ public class Player : MonoBehaviour {
         //variable declaration
         if(!isDead){
             float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+            float vertical = Input.GetAxis("Vertical");
 
         //handles player animation
         if(horizontal!=0||vertical!=0){
@@ -247,4 +254,69 @@ public class Player : MonoBehaviour {
         teleportCooldown = 0;
     }
 
+    //properties for the UI elements might have to change later
+    public static float health {
+        get {
+            return playerHealth;
+        }
+
+        set {
+            playerHealth = value;
+        }
+    }
+
+    public static string qAbility {
+        get {
+            return qAbilityPress;
+        }
+        set {
+            qAbilityPress = value;
+        }
+    }
+
+    public static string eAbility {
+        get {
+            return eAbilityPress;
+        }
+        set {
+            eAbilityPress = value;
+        }
+    }
+
+    public static string shift {
+        get {
+            return shiftPress;
+        }
+        set {
+            shiftPress = value;
+        }
+    }
+
+    public static int publicDamageCooldown {
+        get {
+            if (damageBoostCooldown < 0) {
+                return 0;
+            }
+
+            return (int)damageBoostCooldown;
+        }
+    }
+
+    public static int publicTeleportCooldown {
+        get {
+            if(teleportCooldown < 0) {
+                return 0;
+            }
+            return (int)teleportCooldown;
+        }
+    }
+
+    public static int publicInvincibilityCooldown {
+        get {
+            if (invincibilityCooldown < 0) {
+                return 0;
+            }
+            return (int)invincibilityCooldown;
+        }
+    }
 }
