@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5754157813284800921}
   - component: {fileID: 4485518368656582943}
   - component: {fileID: 1197510980599056415}
-  - component: {fileID: 6339790167661379865}
   - component: {fileID: -5310989872409581025}
   m_Layer: 7
   m_Name: Ghost
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 942175811
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3bd6ae9ed48144bf6b53332d6b4a753a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -118,6 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0917c582dd25bd94b843078672057eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  animator: {fileID: 0}
   Hero: {fileID: 288131256159044916, guid: ba8822f57adbb40b399405581a728adb, type: 3}
   spriteRenderer: {fileID: 5754157813284800920}
   projectilePrefab: {fileID: 3590414716947430237, guid: aed417b29858c31428fc890246f15061, type: 3}
@@ -151,20 +152,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0530729, y: 1.729656}
   m_EdgeRadius: 0
---- !u!114 &6339790167661379865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5754157813284800614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26adc29e2cecd4f8484871f6ab21f24c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  animator: {fileID: 5754157813284800921}
 --- !u!50 &-5310989872409581025
 Rigidbody2D:
   serializedVersion: 4
