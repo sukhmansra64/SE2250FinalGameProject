@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4485518368656582943}
   - component: {fileID: 1197510980599056415}
   - component: {fileID: -5310989872409581025}
+  - component: {fileID: 4605965924308296082}
   m_Layer: 7
   m_Name: Ghost
   m_TagString: Ghost
@@ -173,3 +174,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &4605965924308296082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5754157813284800614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0917c582dd25bd94b843078672057eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  animator: {fileID: 5754157813284800921}
+  Hero: {fileID: 5889653759742941914, guid: 7499a25d756c8be4b93fa53bfdc4a677, type: 3}
+  spriteRenderer: {fileID: 5754157813284800920}
+  projectilePrefab: {fileID: 3590414716947430237, guid: aed417b29858c31428fc890246f15061, type: 3}
+  projectileSpeed: 20
+  time: 0
+  interpolationPeriod: 2
+  choice: 

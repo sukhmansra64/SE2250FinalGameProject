@@ -8,6 +8,7 @@ public class ParentPlayer : MonoBehaviour
     //variable declarations
     public GameObject player;
     protected int playerDamage;
+    public static int maxHealth;
     protected float speed;
     protected static float teleportCooldown, invincibilityCooldown, healthResetCooldown, damageBoostCooldown;   //might need to undo static and private
     protected static float playerHealth, playerHealthBeforeInvincibility;
