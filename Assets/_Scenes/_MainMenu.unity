@@ -445,8 +445,13 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
+
+  m_AnchoredPosition: {x: 468.63998, y: 407}
+  m_SizeDelta: {x: 937.28, y: 215.134}
+
   m_AnchoredPosition: {x: 702, y: 353.12}
   m_SizeDelta: {x: 470.553, y: 372.088}
+
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &476976588
 MonoBehaviour:
@@ -468,7 +473,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+
+  m_text: Attack on Demons
+
   m_text: Fadi
+
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 256691df1db7ae843b61db5799de1170, type: 2}
   m_sharedMaterial: {fileID: -9105119571020976245, guid: 256691df1db7ae843b61db5799de1170, type: 2}
@@ -495,7 +504,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
+
+  m_fontSize: 156.7
+
   m_fontSize: 300
+
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
