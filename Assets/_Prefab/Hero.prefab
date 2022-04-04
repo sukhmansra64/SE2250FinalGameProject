@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288131256159044916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.29545453, y: 0.045454547, z: 0}
+  m_LocalPosition: {x: -0.29545453, y: 0.045454547, z: -10}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 8344961021738315333}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 582207539
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 3204480812468917802, guid: a39a09985cc7e4d31936f6a3e27cf796, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60aabe2473c32431798d3576381e8149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   animator: {fileID: 288131256159044919}
   spriteRenderer: {fileID: 288131256159044918}
   attackPoint: {fileID: 8344961021738315333}
@@ -125,6 +126,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   isDead: 0
+  projectilePrefab: {fileID: 0}
+  left: 0
+  projectileSpeed: 20
 --- !u!50 &263048246
 Rigidbody2D:
   serializedVersion: 4

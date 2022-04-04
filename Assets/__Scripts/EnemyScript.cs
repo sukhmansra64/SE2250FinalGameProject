@@ -5,13 +5,8 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour {
 
     public int maxHealth = 100;
-    int currentHealth;
+    protected int currentHealth;
     public Animator animator;
-    // Start is called before the first frame update
-    void Start() {
-
-        currentHealth = maxHealth;
-    }
 
     //method for the enemy to take damage
     public void TakeDamage(int damage) {
@@ -23,7 +18,7 @@ public class EnemyScript : MonoBehaviour {
     }
 
     //method for the enemy to die
-    void Die() {
+    protected void Die() {
 
         //make the enemy dead animation
         animator.SetTrigger("Death");
@@ -37,11 +32,11 @@ public class EnemyScript : MonoBehaviour {
         }
     }
 
-    void DestroyGO(){
+    protected void DestroyGO(){
         Destroy(this.gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         GameObject go = collision.gameObject;
         if (go.tag == "HeroProjectile")

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GhostScript : MonoBehaviour
+public class GhostScript : EnemyScript
 {
     public GameObject Hero;
     public SpriteRenderer spriteRenderer;
@@ -17,7 +17,7 @@ public class GhostScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
