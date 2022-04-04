@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  animator: {fileID: 0}
+  animator: {fileID: 5754157813284800921}
   Hero: {fileID: 288131256159044916, guid: ba8822f57adbb40b399405581a728adb, type: 3}
   spriteRenderer: {fileID: 5754157813284800920}
   projectilePrefab: {fileID: 3590414716947430237, guid: aed417b29858c31428fc890246f15061, type: 3}
