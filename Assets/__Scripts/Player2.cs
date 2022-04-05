@@ -23,8 +23,8 @@ public class Player2 : ParentPlayer{
         speed = 6;
 
         //initializes all of the attack specifics
-        attackRange = 1.5f;
-        attackRate = 2f;
+        attackRange = 2f;
+        attackRate = 4f;
         nextAttackTime = 0f;
 
         //initiliazes the player object for use in other scripts

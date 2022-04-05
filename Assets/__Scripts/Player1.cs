@@ -23,7 +23,7 @@ public class Player1 : ParentPlayer {
         speed = 4;
 
         //initializes all of the attack specifics
-        attackRange = 1.2f;
+        attackRange = 2.5f;
         attackRate = 2f;
         nextAttackTime = 0f;
 
