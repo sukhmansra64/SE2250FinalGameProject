@@ -39,20 +39,6 @@ public class Player2 : ParentPlayer{
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 
-            //handles player animation
-            if(horizontal!=0||vertical!=0){
-                animator.SetFloat("Speed",1);
-            }else{
-                animator.SetFloat("Speed",0);
-            }
-            if(horizontal<0){
-                spriteRenderer.flipX=true;
-                left=true;
-            }
-            if(horizontal>0){
-                spriteRenderer.flipX=false;
-                left=false;
-            }
 
             //handles player attack
             if(Time.time >= nextAttackTime) {
@@ -68,6 +54,9 @@ public class Player2 : ParentPlayer{
 
             //moves the player
             Move(horizontal, vertical);
+
+            //handles player animation
+            Animation(horizontal, vertical);
 
             //code used for player teleporting
             if (Input.GetKeyDown(KeyCode.LeftShift)) {

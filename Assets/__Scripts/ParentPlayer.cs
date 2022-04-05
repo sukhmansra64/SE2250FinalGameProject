@@ -32,6 +32,24 @@ public class ParentPlayer : MonoBehaviour{
         //change the position of the player
         transform.position = transform.position + new Vector3(horizontal * speed * Time.deltaTime, vertical * speed * Time.deltaTime, 0);
     }
+    
+    //handles player animation
+    protected void Animation(float horizontal, float vertical) {
+        if (horizontal != 0 || vertical != 0) {
+            animator.SetFloat("Speed", 1);
+        }
+        else {
+            animator.SetFloat("Speed", 0);
+        }
+        if (horizontal < 0) {
+            spriteRenderer.flipX = true;
+            left = true;
+        }
+        if (horizontal > 0) {
+            spriteRenderer.flipX = false;
+            left = false;
+        }
+    }
 
     //attack method
     protected void Attack(){
