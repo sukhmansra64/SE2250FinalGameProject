@@ -9,11 +9,13 @@ public class MeleeAbility : MonoBehaviour
 
     public void ChooseStab()
     {
+        PlayerPrefs.SetString("Attack", "Stab");
         SceneManager.LoadScene(screen);
     }
 
     public void ChooseSlash()
     {
+        PlayerPrefs.SetString("Attack", "Slash");
         SceneManager.LoadScene(screen);
     }
 }
