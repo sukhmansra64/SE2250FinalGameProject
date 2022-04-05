@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float secondTime = 0.0f;
-    public float secondInterpolationPeriod = 0.5f;
+    public Vector3 LaunchOffset;
+    public bool Thrown;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        secondTime += Time.deltaTime;
-
-        if (secondTime >= secondInterpolationPeriod / 5)
+        if (Thrown)
         {
-            secondTime = 0.0f;
-            Die();
+            var direction = -transform.right + Vector3.down;
+            GetComponent<Rigidbody2D>().AddForce(direction * 8, ForceMode2D.Impulse);
         }
+        transform.Translate(LaunchOffset);
+        Destroy(gameObject, 0.5f);
     }
 
-    private void Die()
+    public void Update()
     {
-        Destroy(gameObject);
+        
     }
 }

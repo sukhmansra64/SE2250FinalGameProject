@@ -11,6 +11,7 @@ TagManager:
   - EnemyProjectile
   - HeroProjectile
   - Eagle
+  - ThrowableProjectile
   layers:
   - Default
   - TransparentFX

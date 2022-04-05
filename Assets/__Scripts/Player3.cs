@@ -48,7 +48,7 @@ public class Player3 : ParentPlayer {
 
             if (Time.time >= nextShootTime) {
                 if (Input.GetKeyDown(KeyCode.B)) {
-                    Fire(left);
+                    useRangedAbility(left);
                     nextShootTime = Time.time + 1f / shootRate;
                 }
             }
