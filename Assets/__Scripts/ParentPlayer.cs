@@ -200,6 +200,12 @@ public class ParentPlayer : MonoBehaviour{
             Destroy(collision.gameObject);
             playerHealth = maxHealth;
         }
+
+        if (collision.gameObject.tag == "Parrot")
+        {
+            Destroy(collision.gameObject);
+            SceneManager.LoadScene("_EndingStory");
+        }
     }
 
     //method that executes when the player's takes damage

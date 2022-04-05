@@ -30,12 +30,15 @@ EditorBuildSettings:
     path: Assets/_Scenes/_Scene_2.unity
     guid: 2bf50c19da9b62c45aebf84aa5fd6546
   - enabled: 1
-    path: Assets/_Scenes/_Midstory.unity
-    guid: 72e6865c61cbf3746a48523a074e08f9
-  - enabled: 1
     path: Assets/_Scenes/_Scene_3.unity
     guid: d7c2155993979774bb6b8e38c6b56e32
   - enabled: 1
     path: Assets/_Scenes/_Scene_4.unity
     guid: 8622d0f28d3b2d445a549293cdb5cb63
+  - enabled: 1
+    path: Assets/_Scenes/_Midstory.unity
+    guid: 72e6865c61cbf3746a48523a074e08f9
+  - enabled: 1
+    path: Assets/_Scenes/_EndingStory.unity
+    guid: 2fbca4953f0991540977f0e3cf91e654
   m_configObjects: {}
