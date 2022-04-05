@@ -18,6 +18,7 @@ public class GhostScript : EnemyScript
     void Start()
     {
         currentHealth = maxHealth;
+        Hero = GameObject.FindGameObjectsWithTag("Hero")[0];
     }
 
     // Update is called once per frame

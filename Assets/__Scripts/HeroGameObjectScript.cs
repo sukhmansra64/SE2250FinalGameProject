@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class HeroGameObjectScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject[] Hero;
+
+    void Awake()
     {
-        
+        Hero = GameObject.FindGameObjectsWithTag("Hero");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = new Vector3(Hero[0].GetComponent<Transform>().transform.position.x, Hero[0].GetComponent<Transform>().transform.position.y, Hero[0].GetComponent<Transform>().transform.position.z);
     }
 }

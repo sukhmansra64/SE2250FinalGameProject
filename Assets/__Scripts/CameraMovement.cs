@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField] public Transform target;
+    public Transform target;
+
+    void Awake()
+    {
+        target = GameObject.FindGameObjectsWithTag("Hero")[0].GetComponent<Transform>();
+    }
 
     // Update is called once per frame
     private void Update()

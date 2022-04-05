@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   animator: {fileID: 5364777310914497985}
-  hero: {fileID: 288131256159044916, guid: ba8822f57adbb40b399405581a728adb, type: 3}
+  hero: {fileID: 0}
   spriteRenderer: {fileID: 5364777310914497984}
 --- !u!61 &525830991346856583
 BoxCollider2D:

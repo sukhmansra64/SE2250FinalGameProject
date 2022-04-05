@@ -10,6 +10,7 @@ public class SkeletonScript : EnemyScript
     void Start()
     {
         currentHealth = maxHealth;
+        hero = GameObject.FindGameObjectsWithTag("Hero")[0];
     }
 
     // Update is called once per frame
