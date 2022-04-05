@@ -20,8 +20,12 @@ public class ParentPlayer : MonoBehaviour{
     public LayerMask enemyLayers;
     public bool isDead = false;
     public GameObject projectilePrefab;
+    public GameObject throwableProjectilePrefab;
     public bool left;
     public float projectileSpeed = 20f;
+    public Transform LaunchOffset;
+    
+    public int rangedAbility = 1;
 
     //temporary variable that will need to be implemented in the children
     protected static string qAbilityPress = "Damage Boost", eAbilityPress = "Invincibility", shiftPress = "Teleport";
@@ -63,6 +67,21 @@ public class ParentPlayer : MonoBehaviour{
         }
     }
 
+    protected void useRangedAbility(bool left)
+    {
+        if (rangedAbility == 1)
+        {
+            Fire(left);
+        }
+        else if (rangedAbility == 2)
+        {
+            Throw(left);
+        }
+        else if (rangedAbility == 3)
+        {
+            //Add the method call here to do grappling hook
+        }
+    }
     protected void Fire(bool left)
     {
         GameObject projGO = Instantiate<GameObject>(projectilePrefab);
@@ -77,6 +96,27 @@ public class ParentPlayer : MonoBehaviour{
         else if (left)
         {
             rigidB.velocity = Vector3.left * projectileSpeed;
+        }
+    }
+
+    protected void Throw(bool left)
+    {
+        GameObject throwableProjGO = Instantiate<GameObject>(throwableProjectilePrefab, LaunchOffset.position, transform.rotation);
+        throwableProjGO.transform.position = transform.position;
+        Rigidbody2D rigidB = throwableProjGO.GetComponent<Rigidbody2D>();
+
+
+        if (!left)
+        {
+            print("right");
+            var direction = Vector3.right + Vector3.down;
+            rigidB.AddForce(direction * 3 * Time.deltaTime, ForceMode2D.Impulse);
+        }
+        else if (left)
+        {
+            print("left");
+            var direction = Vector3.left + Vector3.down;
+            rigidB.AddForce(direction * 3 * Time.deltaTime, ForceMode2D.Impulse);
         }
     }
 

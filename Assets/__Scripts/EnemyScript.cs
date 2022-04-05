@@ -48,7 +48,11 @@ public class EnemyScript : MonoBehaviour {
         if (go.tag == "HeroProjectile")
         {
             TakeDamage(50);
-            Debug.Log("Hit enemy");
+            Destroy(go);
+        }
+        if (go.tag == "ThrowableProjectile")
+        {
+            TakeDamage(100);
             Destroy(go);
         }
     }
