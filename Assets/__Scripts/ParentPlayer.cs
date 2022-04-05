@@ -216,7 +216,25 @@ public class ParentPlayer : MonoBehaviour{
         isDead = true;
         //player death animation
         animator.SetTrigger("Death");
-
+        switch (PlayerPrefs.GetString("Hero"))
+        {
+            case "Knight":
+                PlayerPrefs.SetFloat("Health",100f);
+                playerHealth = 100;
+                break;
+            case "Swordsman":
+                PlayerPrefs.SetFloat("Health",150f);
+                playerHealth = 150;
+                break;
+            case "Gino":
+                PlayerPrefs.SetFloat("Health",80f);
+                playerHealth = 80;
+                break;
+            default:
+                PlayerPrefs.SetFloat("Health",100f);
+                playerHealth = 100;
+                break;
+        }
         //resets the game when the player dies
         Invoke("Reset", 1.3f);
 
@@ -224,8 +242,8 @@ public class ParentPlayer : MonoBehaviour{
 
     //resets the game and re-initializes everything
     protected virtual void Reset() {
+        
         SceneManager.LoadScene("_Scene_1");
-        playerHealth = 100;
         damageBoostCooldown = 0;
         healthResetCooldown = 100000;
         invincibilityCooldown = 0;
@@ -243,6 +261,7 @@ public class ParentPlayer : MonoBehaviour{
             playerHealth = value;
         }
     }
+
 
     public static string qAbility {
         get {
