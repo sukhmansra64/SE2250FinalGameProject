@@ -142,6 +142,11 @@ public class ParentPlayer : MonoBehaviour{
             TakeDamage(25);
         }
 
+        if (collision.gameObject.tag == "Eagle") {
+
+            TakeDamage(50);
+        }
+
         if (otherGO.tag == "EnemyProjectile")
         {
             Destroy(otherGO);

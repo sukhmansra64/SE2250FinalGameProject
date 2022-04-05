@@ -32,14 +32,17 @@ public class EnemyScript : MonoBehaviour {
         if(this.gameObject.tag=="Ghost"){
             ScoreScript.score+=5;
         }
+        if (this.gameObject.tag == "Eagle") {
+            ScoreScript.score+=15;
+        }
     }
 
     protected void DestroyGO(){
         Destroy(this.gameObject);
     }
 
-    protected void OnCollisionEnter2D(Collision2D collision)
-    {
+    protected virtual void OnCollisionEnter2D(Collision2D collision){
+
         GameObject go = collision.gameObject;
         if (go.tag == "HeroProjectile")
         {

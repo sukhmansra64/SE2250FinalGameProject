@@ -5,14 +5,14 @@ using UnityEngine;
 public class BombEnemyScript : EnemyScript
 {
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start(){
+
+        currentHealth = maxHealth;
         Hero = Hero = GameObject.FindGameObjectsWithTag("Hero")[0];
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         Move();
     }
     public void Move()
@@ -27,6 +27,21 @@ public class BombEnemyScript : EnemyScript
         if (direction < 0)
         {
             spriteRenderer.flipX = true;
+        }
+    }
+
+    //method to handle collisions
+    protected override void OnCollisionEnter2D(Collision2D collision) { 
+
+        if (collision.gameObject.tag == "Hero") {
+            Die();
+        }
+
+        GameObject go = collision.gameObject;
+        if (go.tag == "HeroProjectile") {
+            TakeDamage(50);
+            Debug.Log("Hit enemy");
+            Destroy(go);
         }
     }
 }
