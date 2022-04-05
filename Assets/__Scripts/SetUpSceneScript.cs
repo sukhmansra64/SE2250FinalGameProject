@@ -16,14 +16,23 @@ public class SetUpSceneScript : MonoBehaviour
         switch (player){
             case "Swordsman":
                 Instantiate(Swordsman);
+                if(PlayerPrefs.GetFloat("Health")>0){
+                    ParentPlayer.health = PlayerPrefs.GetFloat("Health");
+                }
                 break;
 
             case "Knight":
                 Instantiate(Knight);
+                if(PlayerPrefs.GetFloat("Health")>0){
+                    ParentPlayer.health = PlayerPrefs.GetFloat("Health");
+                }
                 break;
 
             case "Gino":
                 Instantiate(Gino);
+                if(PlayerPrefs.GetFloat("Health")>0){
+                    ParentPlayer.health = PlayerPrefs.GetFloat("Health");
+                }
                 break;
         }
     }

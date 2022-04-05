@@ -71,54 +71,32 @@ public class ParentPlayer : MonoBehaviour{
     {
         if (PlayerPrefs.GetString("Ranged") == "Gun")
         {
-            Fire(left);
+            Fire(left, projectilePrefab);
         }
         else if (PlayerPrefs.GetString("Ranged") == "Bomb")
         {
-            Throw(left);
+            Fire(left, throwableProjectilePrefab);
         }
         else if (rangedAbility == 3)
         {
             //Add the method call here to do grappling hook
         }
     }
-    protected void Fire(bool left)
+    protected void Fire(bool left, GameObject rangedAbility)
     {
-        GameObject projGO = Instantiate<GameObject>(projectilePrefab);
+        GameObject projGO = Instantiate<GameObject>(rangedAbility);
         projGO.transform.position = transform.position;
         Rigidbody2D rigidB = projGO.GetComponent<Rigidbody2D>();
 
 
         //Change this later depending on whether or not the enemy is facing the hero
         if (!left)
-        {
-            
+        {         
             rigidB.velocity = Vector3.right * projectileSpeed;
         }
-        else if (left)
+        else
         {
             rigidB.velocity = Vector3.left * projectileSpeed;
-        }
-    }
-
-    protected void Throw(bool left)
-    {
-        GameObject throwableProjGO = Instantiate<GameObject>(throwableProjectilePrefab, LaunchOffset.position, transform.rotation);
-        throwableProjGO.transform.position = transform.position;
-        Rigidbody2D rigidB = throwableProjGO.GetComponent<Rigidbody2D>();
-
-
-        if (!left)
-        {
-            print("right");
-            var direction = Vector3.right + Vector3.down;
-            rigidB.AddForce(direction * 3 * Time.deltaTime, ForceMode2D.Impulse);
-        }
-        else if (left)
-        {
-            print("left");
-            var direction = Vector3.left + Vector3.down;
-            rigidB.AddForce(direction * 3 * Time.deltaTime, ForceMode2D.Impulse);
         }
     }
 
@@ -222,7 +200,25 @@ public class ParentPlayer : MonoBehaviour{
         isDead = true;
         //player death animation
         animator.SetTrigger("Death");
-
+        switch (PlayerPrefs.GetString("Hero"))
+        {
+            case "Knight":
+                PlayerPrefs.SetFloat("Health",100f);
+                playerHealth = 100;
+                break;
+            case "Swordsman":
+                PlayerPrefs.SetFloat("Health",150f);
+                playerHealth = 150;
+                break;
+            case "Gino":
+                PlayerPrefs.SetFloat("Health",80f);
+                playerHealth = 80;
+                break;
+            default:
+                PlayerPrefs.SetFloat("Health",100f);
+                playerHealth = 100;
+                break;
+        }
         //resets the game when the player dies
         Invoke("Reset", 1.3f);
 
@@ -230,8 +226,8 @@ public class ParentPlayer : MonoBehaviour{
 
     //resets the game and re-initializes everything
     protected virtual void Reset() {
+        
         SceneManager.LoadScene("_Scene_1");
-        playerHealth = 100;
         damageBoostCooldown = 0;
         healthResetCooldown = 100000;
         invincibilityCooldown = 0;
@@ -249,6 +245,7 @@ public class ParentPlayer : MonoBehaviour{
             playerHealth = value;
         }
     }
+
 
     public static string qAbility {
         get {
