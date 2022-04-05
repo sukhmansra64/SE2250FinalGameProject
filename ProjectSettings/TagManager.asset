@@ -13,6 +13,8 @@ TagManager:
   - Eagle
   - ThrowableProjectile
   - Heart
+  - Parrot
+  - Invincibility
   layers:
   - Default
   - TransparentFX
