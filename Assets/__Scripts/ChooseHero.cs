@@ -9,6 +9,7 @@ public class ChooseHero : MonoBehaviour
     
     public void ChooseSwordsman()
     {
+        PlayerPrefs.SetFloat("Health",150f);
         UIScript.score = 0;
         PlayerPrefs.SetString("Hero","Swordsman");
         SceneManager.LoadScene(screen);
@@ -16,6 +17,7 @@ public class ChooseHero : MonoBehaviour
 
     public void ChooseKnight()
     {
+        PlayerPrefs.SetFloat("Health",100f);
         UIScript.score = 0;
         PlayerPrefs.SetString("Hero","Knight");
         SceneManager.LoadScene(screen);
@@ -23,6 +25,7 @@ public class ChooseHero : MonoBehaviour
 
     public void ChooseGino()
     {
+        PlayerPrefs.SetFloat("Health",80f);
         UIScript.score = 0;
         PlayerPrefs.SetString("Hero","Gino");
         SceneManager.LoadScene(screen);

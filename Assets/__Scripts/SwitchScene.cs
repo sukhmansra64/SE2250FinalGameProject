@@ -9,6 +9,7 @@ public class SwitchScene : MonoBehaviour
     {
         if (collision.gameObject.tag == "Hero")
         {
+            PlayerPrefs.SetFloat("Health",ParentPlayer.health);
             CompleteLevel();
         }
     }
