@@ -69,11 +69,11 @@ public class ParentPlayer : MonoBehaviour{
 
     protected void useRangedAbility(bool left)
     {
-        if (rangedAbility == 1)
+        if (PlayerPrefs.GetString("Ranged") == "Gun")
         {
             Fire(left);
         }
-        else if (rangedAbility == 2)
+        else if (PlayerPrefs.GetString("Ranged") == "Bomb")
         {
             Throw(left);
         }
@@ -88,9 +88,11 @@ public class ParentPlayer : MonoBehaviour{
         projGO.transform.position = transform.position;
         Rigidbody2D rigidB = projGO.GetComponent<Rigidbody2D>();
 
+
         //Change this later depending on whether or not the enemy is facing the hero
         if (!left)
         {
+            
             rigidB.velocity = Vector3.right * projectileSpeed;
         }
         else if (left)

@@ -9,16 +9,19 @@ public class RangedAbility : MonoBehaviour
 
     public void ChooseGun()
     {
+        PlayerPrefs.SetString("Ranged","Gun");
         SceneManager.LoadScene(screen);
     }
 
     public void ChooseSplashBomb()
     {
+        PlayerPrefs.SetString("Ranged","Bomb");
         SceneManager.LoadScene(screen);
     }
 
     public void ChooseGrapplingHook()
     {
+        PlayerPrefs.SetString("Ranged","Hook");
         SceneManager.LoadScene(screen);
     }
 }
