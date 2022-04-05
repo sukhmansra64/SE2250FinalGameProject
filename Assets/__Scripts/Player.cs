@@ -245,7 +245,11 @@ public class Player : MonoBehaviour {
     }
 
     //resets the game and re-initializes everything
+<<<<<<< Updated upstream:Assets/__Scripts/Player.cs
     private void Reset() {
+=======
+    protected virtual void Reset() {
+>>>>>>> Stashed changes:Assets/__Scripts/ParentPlayer.cs
         SceneManager.LoadScene("_Scene_1");
         playerHealth = 100;
         damageBoostCooldown = 0;
