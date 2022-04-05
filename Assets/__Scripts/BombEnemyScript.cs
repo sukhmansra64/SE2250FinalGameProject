@@ -40,7 +40,10 @@ public class BombEnemyScript : EnemyScript
         GameObject go = collision.gameObject;
         if (go.tag == "HeroProjectile") {
             TakeDamage(50);
-            Debug.Log("Hit enemy");
+            Destroy(go);
+        }
+        if (go.tag == "ThrowableProjectile") {
+            TakeDamage(100);
             Destroy(go);
         }
     }
