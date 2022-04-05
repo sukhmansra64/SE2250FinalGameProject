@@ -167,9 +167,10 @@ public class ParentPlayer : MonoBehaviour{
 
     //method to handle collisions
     protected void OnCollisionEnter2D(Collision2D collision) {
-        GameObject otherGO = collision.gameObject;
+
         //when picking up the screenWipe collectable it gives the player an ability to destroy all enemies on the screen
         if (collision.gameObject.tag == "screenWipe") {
+
             Destroy(collision.gameObject);
             this.GetComponent<CollectableNewSkill>().Activate();
         }
@@ -187,10 +188,15 @@ public class ParentPlayer : MonoBehaviour{
             TakeDamage(50);
         }
 
-        if (otherGO.tag == "EnemyProjectile")
+        if (collision.gameObject.tag == "EnemyProjectile")
         {
-            Destroy(otherGO);
+            Destroy(collision.gameObject);
             TakeDamage(20);
+        }
+
+        if(collision.gameObject.tag == "Heart") {
+            Destroy(collision.gameObject);
+            playerHealth = maxHealth;
         }
     }
 

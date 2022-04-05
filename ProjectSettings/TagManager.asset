@@ -12,6 +12,7 @@ TagManager:
   - HeroProjectile
   - Eagle
   - ThrowableProjectile
+  - Heart
   layers:
   - Default
   - TransparentFX
