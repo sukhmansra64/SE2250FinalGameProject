@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour {
     public static UIScript instance;
-    public Text healthText, qAbilityText, eAbilityText, shiftText;
+    public Text healthText, qAbilityText, eAbilityText, shiftText, levelText;
 
 
     private void Awake() {
@@ -17,7 +18,15 @@ public class UIScript : MonoBehaviour {
         qAbilityText.text = "Q: " + Player1.qAbility;
         eAbilityText.text = "E: " + Player1.eAbility;
         shiftText.text = "Shift: " + Player1.shift;
-        
+
+        if (SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("_Scene_1")) || SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("_Scene_2"))) {
+
+            levelText.text = "Level: 1";
+        }
+        else {
+            levelText.text = "Level: 2";
+        }
+
     }
 
     // Update is called once per frame
@@ -27,6 +36,5 @@ public class UIScript : MonoBehaviour {
         qAbilityText.text = "Q: " + Player1.qAbility + "    " + Player1.publicDamageCooldown + " s";
         eAbilityText.text = "E: " + Player1.eAbility + "    " + Player1.publicInvincibilityCooldown + " s";
         shiftText.text = "Shift: " + Player1.shift + "    " + Player1.publicTeleportCooldown + " s";
-
     }
 }

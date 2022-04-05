@@ -11,6 +11,7 @@ public class Player1 : ParentPlayer {
         //initializes player health and damage
         playerHealth = 100;
         playerDamage = 30;
+        maxHealth = 100;
 
         //initializes the cooldowns so that all abilities are available off spawn
         teleportCooldown = 0;
