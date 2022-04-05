@@ -21,6 +21,7 @@ public class ParentPlayer : MonoBehaviour{
     public bool isDead = false;
     public GameObject projectilePrefab;
     public GameObject throwableProjectilePrefab;
+    public GameObject daggerPrefab;
     public bool left;
     public float projectileSpeed = 20f;
     public Transform LaunchOffset;
@@ -71,54 +72,60 @@ public class ParentPlayer : MonoBehaviour{
     {
         if (PlayerPrefs.GetString("Ranged") == "Gun")
         {
-            Fire(left);
+            Fire(left, projectilePrefab);
         }
         else if (PlayerPrefs.GetString("Ranged") == "Bomb")
         {
-            Throw(left);
+            Fire(left, throwableProjectilePrefab);
         }
         else if (rangedAbility == 3)
         {
             //Add the method call here to do grappling hook
         }
     }
-    protected void Fire(bool left)
+
+    protected void useMeleeAbility(bool left)
     {
-        GameObject projGO = Instantiate<GameObject>(projectilePrefab);
+        if (PlayerPrefs.GetString("Attack") == "Slash")
+        {
+            Attack();
+        }
+        else if (PlayerPrefs.GetString("Attack") == "Stab") 
+        {
+            Stab(left, daggerPrefab);
+        }
+    }
+    protected void Fire(bool left, GameObject rangedAbility)
+    {
+        GameObject projGO = Instantiate<GameObject>(rangedAbility);
         projGO.transform.position = transform.position;
         Rigidbody2D rigidB = projGO.GetComponent<Rigidbody2D>();
 
 
         //Change this later depending on whether or not the enemy is facing the hero
         if (!left)
-        {
-            
+        {         
             rigidB.velocity = Vector3.right * projectileSpeed;
         }
-        else if (left)
+        else
         {
             rigidB.velocity = Vector3.left * projectileSpeed;
         }
     }
 
-    protected void Throw(bool left)
+    protected void Stab(bool left, GameObject meleeAbility)
     {
-        GameObject throwableProjGO = Instantiate<GameObject>(throwableProjectilePrefab, LaunchOffset.position, transform.rotation);
-        throwableProjGO.transform.position = transform.position;
-        Rigidbody2D rigidB = throwableProjGO.GetComponent<Rigidbody2D>();
-
+        GameObject stabGO = Instantiate<GameObject>(meleeAbility);
+        stabGO.transform.position = transform.position;
+        Rigidbody2D rigidB = stabGO.GetComponent<Rigidbody2D>();
 
         if (!left)
         {
-            print("right");
-            var direction = Vector3.right + Vector3.down;
-            rigidB.AddForce(direction * 3 * Time.deltaTime, ForceMode2D.Impulse);
+            rigidB.velocity = Vector3.right * projectileSpeed;
         }
-        else if (left)
+        else
         {
-            print("left");
-            var direction = Vector3.left + Vector3.down;
-            rigidB.AddForce(direction * 3 * Time.deltaTime, ForceMode2D.Impulse);
+            rigidB.velocity = Vector3.left * projectileSpeed;
         }
     }
 
@@ -172,9 +179,10 @@ public class ParentPlayer : MonoBehaviour{
 
         //when picking up the screenWipe collectable it gives the player an ability to destroy all enemies on the screen
         if (collision.gameObject.tag == "screenWipe") {
-
             Destroy(collision.gameObject);
             this.GetComponent<CollectableNewSkill>().Activate();
+
+            UIScript.message = ("Press Tab to destroy all enemies on screen");
         }
 
         if(collision.gameObject.tag == "Ghost") {

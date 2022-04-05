@@ -237,6 +237,7 @@ MonoBehaviour:
   isDead: 0
   projectilePrefab: {fileID: 6448025683241326646, guid: 7d9eaf73b98df2f418dc839d3ce0ae3e, type: 3}
   throwableProjectilePrefab: {fileID: 3708447803007239901, guid: fb3991fe8d92b3b49b7f90b1e8e8b107, type: 3}
+  daggerPrefab: {fileID: 2775900590687583741, guid: 7aa7569d331e47f44816687c3eadaf73, type: 3}
   left: 0
   projectileSpeed: 20
   LaunchOffset: {fileID: 2022815776730935189}
