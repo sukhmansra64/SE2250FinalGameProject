@@ -179,9 +179,10 @@ public class ParentPlayer : MonoBehaviour{
 
         //when picking up the screenWipe collectable it gives the player an ability to destroy all enemies on the screen
         if (collision.gameObject.tag == "screenWipe") {
-
             Destroy(collision.gameObject);
             this.GetComponent<CollectableNewSkill>().Activate();
+
+            UIScript.message = ("Press Tab to destroy all enemies on screen");
         }
 
         if(collision.gameObject.tag == "Ghost") {
