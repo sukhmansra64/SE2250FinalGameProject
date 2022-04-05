@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288131256159044916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.29545453, y: 0.045454547, z: 4}
+  m_LocalPosition: {x: -0.29545453, y: 0.045454547, z: -1}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 8344961021738315333}
@@ -126,7 +126,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   isDead: 0
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 6448025683241326646, guid: 7d9eaf73b98df2f418dc839d3ce0ae3e, type: 3}
   left: 0
   projectileSpeed: 20
 --- !u!50 &263048246

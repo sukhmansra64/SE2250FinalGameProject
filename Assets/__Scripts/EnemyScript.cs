@@ -7,6 +7,8 @@ public class EnemyScript : MonoBehaviour {
     public int maxHealth = 100;
     protected int currentHealth;
     public Animator animator;
+    protected GameObject Hero;
+    public SpriteRenderer spriteRenderer;
 
     //method for the enemy to take damage
     public void TakeDamage(int damage) {
