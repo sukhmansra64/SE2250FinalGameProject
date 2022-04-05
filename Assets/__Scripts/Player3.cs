@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player1 : ParentPlayer {
-
-    // Awake is called when the script instance is being loaded
+public class Player3 : ParentPlayer {
+    // Start is called before the first frame update
     void Awake() {
 
         //initializes player health and damage
-        playerHealth = 100;
-        playerDamage = 30;
+        playerHealth = 140;
+        playerDamage = 25;
+        maxHealth = 140;
 
         //initializes the cooldowns so that all abilities are available off spawn
         teleportCooldown = 0;
@@ -19,10 +19,10 @@ public class Player1 : ParentPlayer {
         invincibilityCooldown = 0;
 
         //initializes the speed of the player
-        speed = 4;
+        speed = 2;
 
         //initializes all of the attack specifics
-        attackRange = 1.2f;
+        attackRange = 2.5f;
         attackRate = 2f;
         nextAttackTime = 0f;
 
@@ -33,9 +33,10 @@ public class Player1 : ParentPlayer {
     // Update is called once per frame
     void Update() {
         //variable declaration
-        if(!isDead){
+        if (!isDead) {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
+
 
             //handles player attack
             if (Time.time >= nextAttackTime) {
@@ -45,7 +46,7 @@ public class Player1 : ParentPlayer {
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.B)){
+            if (Input.GetKeyDown(KeyCode.B)) {
                 Fire(left);
             }
 
@@ -60,7 +61,7 @@ public class Player1 : ParentPlayer {
                 Teleport(horizontal, vertical);
             }
 
-        }        
+        }
 
 
         //code used for invincibility
@@ -75,7 +76,7 @@ public class Player1 : ParentPlayer {
         }
 
         //code for testing death
-        if(Input.GetKeyDown(KeyCode.P)) {
+        if (Input.GetKeyDown(KeyCode.P)) {
             Die();
         }
 
@@ -89,5 +90,14 @@ public class Player1 : ParentPlayer {
         invincibilityCooldown -= Time.deltaTime;
         healthResetCooldown -= Time.deltaTime;
         damageBoostCooldown -= Time.deltaTime;
+    }
+    //resets the game and re-initializes everything
+    protected override void Reset() {
+        SceneManager.LoadScene("_Scene_1");
+        playerHealth = 140;
+        damageBoostCooldown = 0;
+        healthResetCooldown = 100000;
+        invincibilityCooldown = 0;
+        teleportCooldown = 0;
     }
 }
