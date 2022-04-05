@@ -274,8 +274,9 @@ GameObject:
   - component: {fileID: 394928729}
   - component: {fileID: 394928728}
   - component: {fileID: 394928727}
+  - component: {fileID: 394928731}
   m_Layer: 5
-  m_Name: Choose Hero
+  m_Name: Ranged Ability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369,6 +370,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &394928731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394928726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5750edb4b6f884a9b22cdb70fcfcaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screen: _Scene_1
 --- !u!4 &677086808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3708447803007239891, guid: fb3991fe8d92b3b49b7f90b1e8e8b107, type: 3}
@@ -542,6 +556,34 @@ PrefabInstance:
     - target: {fileID: 3637680727205353880, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
       propertyPath: m_Name
       value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 394928731}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RangedAbility, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3637680727205353883, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
       propertyPath: m_Pivot.x
@@ -727,6 +769,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Button (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 394928731}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseGrapplingHook
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RangedAbility, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3637680727205353883, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -832,6 +902,34 @@ PrefabInstance:
     - target: {fileID: 3637680727205353880, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
       propertyPath: m_Name
       value: Button (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 394928731}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseSplashBomb
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: RangedAbility, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637680727205353882, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3637680727205353883, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
       propertyPath: m_Pivot.x

@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class MeleeAbility : MonoBehaviour
 {
     public string screen;
 
-    public void StartGame()
+    public void ChooseStab()
     {
         SceneManager.LoadScene(screen);
     }
 
-    public void QuitGame()
+    public void ChooseSlash()
     {
-        Application.Quit();
-        Debug.Log("Quitting");
+        SceneManager.LoadScene(screen);
     }
 }
