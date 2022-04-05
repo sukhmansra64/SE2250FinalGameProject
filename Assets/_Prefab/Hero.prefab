@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 288131256159044912}
   - component: {fileID: 263048246}
   - component: {fileID: 263048245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hero
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,7 +185,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8344961021738315333}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

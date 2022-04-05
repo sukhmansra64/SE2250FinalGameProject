@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 203312952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackPointGino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: 4200693651349924398}
   - component: {fileID: 3818651571635672898}
   - component: {fileID: 8487145021272270888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Gino
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
