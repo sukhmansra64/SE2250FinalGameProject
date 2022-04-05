@@ -8,10 +8,18 @@ public class Player1 : ParentPlayer {
     // Awake is called when the script instance is being loaded
     void Awake() {
 
-        //initializes player health and damage
-        playerHealth = 100;
+        //initializes player health depending on the scene
+        if (this.gameObject.scene.name == "_Scene_1" || this.gameObject.scene.name == "_Scene_2") {
+            playerHealth = 100;
+            maxHealth = 100;
+        }
+        else {
+            playerHealth = 150;
+            maxHealth = 150;
+        }
+
+        //initializes player damage
         playerDamage = 30;
-        maxHealth = 100;
 
         //initializes the cooldowns so that all abilities are available off spawn
         teleportCooldown = 0;

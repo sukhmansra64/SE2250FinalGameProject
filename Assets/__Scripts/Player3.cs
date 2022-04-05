@@ -8,10 +8,18 @@ public class Player3 : ParentPlayer {
     // Start is called before the first frame update
     void Awake() {
 
-        //initializes player health and damage
-        playerHealth = 140;
+        //initializes player health depending on the scene
+        if (this.gameObject.scene.name == "_Scene_1" || this.gameObject.scene.name == "_Scene_2") {
+            playerHealth = 150;
+            maxHealth = 150;
+        }
+        else {
+            playerHealth = 225;
+            maxHealth = 225;
+        }
+
+        //initializes player damage
         playerDamage = 25;
-        maxHealth = 140;
 
         //initializes the cooldowns so that all abilities are available off spawn
         teleportCooldown = 0;

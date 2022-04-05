@@ -16,9 +16,9 @@ public class UIScript : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start(){
-        qAbilityText.text = "Q: " + Player1.qAbility;
-        eAbilityText.text = "E: " + Player1.eAbility;
-        shiftText.text = "Shift: " + Player1.shift;
+        qAbilityText.text = "Q: " + ParentPlayer.qAbility;
+        eAbilityText.text = "E: " + ParentPlayer.eAbility;
+        shiftText.text = "Shift: " + ParentPlayer.shift;
 
         if (this.gameObject.scene.name == "_Scene_1" || this.gameObject.scene.name == "_Scene_2") {
 
@@ -34,9 +34,16 @@ public class UIScript : MonoBehaviour {
     void Update(){
         //same code from up above that way theres no need to update it in the player class
         scoreText.text = "Points: " + score;
-        healthText.text = "HP: " + Player1.health + "/" + Player1.maxHealth;
-        qAbilityText.text = "Q: " + Player1.qAbility + "    " + Player1.publicDamageCooldown + " s";
-        eAbilityText.text = "E: " + Player1.eAbility + "    " + Player1.publicInvincibilityCooldown + " s";
-        shiftText.text = "Shift: " + Player1.shift + "    " + Player1.publicTeleportCooldown + " s";
+
+        if(ParentPlayer.health > 0) {
+            healthText.text = "HP: " + ParentPlayer.health + "/" + ParentPlayer.maxHealth;
+        }
+        else {
+            healthText.text = "HP: 0/" + ParentPlayer.maxHealth;
+        }
+
+        qAbilityText.text = "Q: " + ParentPlayer.qAbility + "    " + ParentPlayer.publicDamageCooldown + " s";
+        eAbilityText.text = "E: " + ParentPlayer.eAbility + "    " + ParentPlayer.publicInvincibilityCooldown + " s";
+        shiftText.text = "Shift: " + ParentPlayer.shift + "    " + ParentPlayer.publicTeleportCooldown + " s";
     }
 }
