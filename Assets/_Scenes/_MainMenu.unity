@@ -468,7 +468,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Attack on Demons
+  m_text: 'Taken: GINO'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 256691df1db7ae843b61db5799de1170, type: 2}
   m_sharedMaterial: {fileID: -9105119571020976245, guid: 256691df1db7ae843b61db5799de1170, type: 2}
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 144.1
+  m_fontSize: 228.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

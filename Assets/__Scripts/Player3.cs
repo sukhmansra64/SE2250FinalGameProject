@@ -49,7 +49,7 @@ public class Player3 : ParentPlayer {
             //handles player attack
             if (Time.time >= nextAttackTime) {
                 if (Input.GetKeyDown(KeyCode.Space)) {
-                    Attack();
+                    useMeleeAbility(left);
                     nextAttackTime = Time.time + 1f / attackRate;
                 }
             }

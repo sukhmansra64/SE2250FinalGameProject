@@ -184,7 +184,7 @@ MonoBehaviour:
     mission was a success.
 
 
-    Thank you for playing!'
+    Thank you for playing our game!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 256691df1db7ae843b61db5799de1170, type: 2}
   m_sharedMaterial: {fileID: -9105119571020976245, guid: 256691df1db7ae843b61db5799de1170, type: 2}
