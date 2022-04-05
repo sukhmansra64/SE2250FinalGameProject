@@ -50,7 +50,7 @@ public class UIScript : MonoBehaviour {
             healthText.text = "HP: 0/" + ParentPlayer.maxHealth;
         }
 
-        if(message != "") {
+        if (message != "") {
             helpText.text = message;
             Invoke("deleteMiddleText", 2f);
         }
