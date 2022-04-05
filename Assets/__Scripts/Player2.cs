@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player2 : ParentPlayer
-{
+public class Player2 : ParentPlayer{
 
     // Start is called before the first frame update
-    void Awake()
-    {
+    void Awake(){
+
         //initializes player health and damage
         playerHealth = 80;
         playerDamage = 20;
@@ -24,7 +23,7 @@ public class Player2 : ParentPlayer
         speed = 6;
 
         //initializes all of the attack specifics
-        attackRange = 1.2f;
+        attackRange = 1.5f;
         attackRate = 2f;
         nextAttackTime = 0f;
 
@@ -40,44 +39,41 @@ public class Player2 : ParentPlayer
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 
-        //handles player animation
-        if(horizontal!=0||vertical!=0){
-            animator.SetFloat("Speed",1);
-        }else{
-            animator.SetFloat("Speed",0);
-        }
-        if(horizontal<0){
-            spriteRenderer.flipX=true;
-            left=true;
-        }
-        if(horizontal>0){
-            spriteRenderer.flipX=false;
-            left=false;
-        }
-
-        //handles player attack
-        if(Input.GetKeyDown(KeyCode.Space)){
-            Attack();
-        }
-
-        if(Input.GetKeyDown(KeyCode.B)){
-            Fire(left);
-        }
-
-        //moves the player
-        Move(horizontal, vertical);
-
-        //code used for player teleporting
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
-            Teleport(horizontal, vertical);
-        }
-
-        }
-        if(Time.time >= nextAttackTime) {
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
+            //handles player animation
+            if(horizontal!=0||vertical!=0){
+                animator.SetFloat("Speed",1);
+            }else{
+                animator.SetFloat("Speed",0);
             }
+            if(horizontal<0){
+                spriteRenderer.flipX=true;
+                left=true;
+            }
+            if(horizontal>0){
+                spriteRenderer.flipX=false;
+                left=false;
+            }
+
+            //handles player attack
+            if(Time.time >= nextAttackTime) {
+                if (Input.GetKeyDown(KeyCode.Space)) {
+                    Attack();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.B)){
+                Fire(left);
+            }
+
+            //moves the player
+            Move(horizontal, vertical);
+
+            //code used for player teleporting
+            if (Input.GetKeyDown(KeyCode.LeftShift)) {
+                Teleport(horizontal, vertical);
+            }
+
         }
 
 
@@ -109,7 +105,7 @@ public class Player2 : ParentPlayer
         damageBoostCooldown -= Time.deltaTime;
     }
     //resets the game and re-initializes everything
-    protected void Reset() {
+    protected override void Reset() {
         SceneManager.LoadScene("_Scene_1");
         playerHealth = 80;
         damageBoostCooldown = 0;
