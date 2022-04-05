@@ -3056,6 +3056,8 @@ GameObject:
   - component: {fileID: 609898156}
   - component: {fileID: 609898155}
   - component: {fileID: 609898154}
+  - component: {fileID: 609898158}
+  - component: {fileID: 609898157}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3128,6 +3130,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &609898157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609898153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebee882f10fcb794988980f20e67f7cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+--- !u!114 &609898158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609898153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0038f808ccc974b988cbda74efcfe961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: 
+  Swordsman: {fileID: 5163366639764377203, guid: 1c1e408018ae0fa41a44a98dd6a7d13c, type: 3}
+  Knight: {fileID: 288131256159044916, guid: ba8822f57adbb40b399405581a728adb, type: 3}
+  Gino: {fileID: 5889653759742941914, guid: 7499a25d756c8be4b93fa53bfdc4a677, type: 3}
 --- !u!1 &1031582809
 GameObject:
   m_ObjectHideFlags: 0

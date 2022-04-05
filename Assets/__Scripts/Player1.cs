@@ -46,8 +46,11 @@ public class Player1 : ParentPlayer {
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.B)){
-                Fire(left);
+            if (Time.time >= nextShootTime) {
+                if (Input.GetKeyDown(KeyCode.B)) {
+                    Fire(left);
+                    nextShootTime = Time.time + 1f / shootRate;
+                }
             }
 
             //moves the player

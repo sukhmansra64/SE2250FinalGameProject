@@ -24,7 +24,7 @@ public class Player3 : ParentPlayer {
 
         //initializes all of the attack specifics
         attackRange = 2.5f;
-        attackRate = 2f;
+        attackRate = 1f;
         nextAttackTime = 0f;
 
         //initiliazes the player object for use in other scripts
@@ -46,9 +46,13 @@ public class Player3 : ParentPlayer {
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.B)) {
-                Fire(left);
+            if (Time.time >= nextShootTime) {
+                if (Input.GetKeyDown(KeyCode.B)) {
+                    Fire(left);
+                    nextShootTime = Time.time + 1f / shootRate;
+                }
             }
+
 
             //moves the player
             Move(horizontal, vertical);
@@ -99,5 +103,6 @@ public class Player3 : ParentPlayer {
         healthResetCooldown = 100000;
         invincibilityCooldown = 0;
         teleportCooldown = 0;
+        UIScript.score = 0;
     }
 }

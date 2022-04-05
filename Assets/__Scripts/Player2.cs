@@ -32,13 +32,11 @@ public class Player2 : ParentPlayer{
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
          //variable declaration
         if(!isDead){
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
-
 
             //handles player attack
             if(Time.time >= nextAttackTime) {
@@ -48,8 +46,11 @@ public class Player2 : ParentPlayer{
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.B)){
-                Fire(left);
+            if(Time.time >= nextShootTime) {
+                if (Input.GetKeyDown(KeyCode.B)) {
+                    Fire(left);
+                    nextShootTime = Time.time + 1f / shootRate;
+                }
             }
 
             //moves the player
@@ -101,5 +102,6 @@ public class Player2 : ParentPlayer{
         healthResetCooldown = 100000;
         invincibilityCooldown = 0;
         teleportCooldown = 0;
+        UIScript.score = 0;
     }
 }

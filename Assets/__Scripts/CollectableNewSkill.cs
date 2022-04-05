@@ -31,7 +31,7 @@ public class CollectableNewSkill : MonoBehaviour {
         {
         if(skeleton.name.Substring(0,7)=="Skeleto"){               
             Destroy(skeleton);
-            ScoreScript.score+=10;
+            UIScript.score+=10;
         }
         }
         
@@ -40,7 +40,7 @@ public class CollectableNewSkill : MonoBehaviour {
         {
         if(ghost.name.Substring(0,4)=="Ghos"){
             Destroy(ghost);
-            ScoreScript.score+=5;
+            UIScript.score+=5;
         }
         }
         

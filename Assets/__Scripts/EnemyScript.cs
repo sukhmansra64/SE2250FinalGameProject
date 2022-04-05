@@ -26,14 +26,15 @@ public class EnemyScript : MonoBehaviour {
         animator.SetTrigger("Death");
         Invoke("DestroyGO",0.83f);
         GetComponent<Collider2D>().enabled = false;
-        if(this.gameObject.tag=="Skeleton"){
-            ScoreScript.score+=10;
+
+        if(this.gameObject.tag == "Skeleton"){
+            UIScript.score+=10;
         }
-        if(this.gameObject.tag=="Ghost"){
-            ScoreScript.score+=5;
+        if(this.gameObject.tag == "Ghost"){
+            UIScript.score+=5;
         }
         if (this.gameObject.tag == "Eagle") {
-            ScoreScript.score+=15;
+            UIScript.score+=15;
         }
     }
 

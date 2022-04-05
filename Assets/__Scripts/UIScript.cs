@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour {
     public static UIScript instance;
-    public Text healthText, qAbilityText, eAbilityText, shiftText, levelText;
+    public Text scoreText, healthText, qAbilityText, eAbilityText, shiftText, levelText;
+    public static int score;
 
 
     private void Awake() {
@@ -19,7 +20,7 @@ public class UIScript : MonoBehaviour {
         eAbilityText.text = "E: " + Player1.eAbility;
         shiftText.text = "Shift: " + Player1.shift;
 
-        if (SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("_Scene_1")) || SceneManager.GetActiveScene().Equals(SceneManager.GetSceneByName("_Scene_2"))) {
+        if (this.gameObject.scene.name == "_Scene_1" || this.gameObject.scene.name == "_Scene_2") {
 
             levelText.text = "Level: 1";
         }
@@ -32,6 +33,7 @@ public class UIScript : MonoBehaviour {
     // Update is called once per frame
     void Update(){
         //same code from up above that way theres no need to update it in the player class
+        scoreText.text = "Points: " + score;
         healthText.text = "HP: " + Player1.health + "/" + Player1.maxHealth;
         qAbilityText.text = "Q: " + Player1.qAbility + "    " + Player1.publicDamageCooldown + " s";
         eAbilityText.text = "E: " + Player1.eAbility + "    " + Player1.publicInvincibilityCooldown + " s";

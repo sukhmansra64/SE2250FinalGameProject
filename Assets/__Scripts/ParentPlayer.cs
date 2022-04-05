@@ -12,8 +12,8 @@ public class ParentPlayer : MonoBehaviour{
     protected static float teleportCooldown, invincibilityCooldown, healthResetCooldown, damageBoostCooldown;   //might need to undo static and private
     protected static float playerHealth, playerHealthBeforeInvincibility;
     protected float attackRange;
-    protected float attackRate;
-    protected float nextAttackTime;
+    protected float attackRate, shootRate = 1f;
+    protected float nextAttackTime, nextShootTime;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Transform attackPoint;
@@ -182,6 +182,7 @@ public class ParentPlayer : MonoBehaviour{
         healthResetCooldown = 100000;
         invincibilityCooldown = 0;
         teleportCooldown = 0;
+        UIScript.score = 0;
     }
     
         //properties for the UI elements might have to change later
