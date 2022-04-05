@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 394928727}
   - component: {fileID: 394928731}
   m_Layer: 5
-  m_Name: Midstory
+  m_Name: MiddleStory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -554,7 +554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3637680727205353883, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -465
+      value: -439
       objectReference: {fileID: 0}
     - target: {fileID: 3637680727205353883, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

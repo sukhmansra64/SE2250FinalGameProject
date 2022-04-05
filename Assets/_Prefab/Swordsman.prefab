@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8550299817664608609}
   - component: {fileID: 6052229731389949660}
   - component: {fileID: 6211903837534110070}
+  - component: {fileID: 7048569155797141983}
   m_Layer: 8
   m_Name: Swordsman
   m_TagString: Hero
@@ -180,6 +181,18 @@ MonoBehaviour:
   projectileSpeed: 20
   LaunchOffset: {fileID: 3114417635544381800}
   rangedAbility: 2
+--- !u!114 &7048569155797141983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5163366639764377203}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc5ebee3db35e4cc5be12678021f86d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5723080371588515043
 GameObject:
   m_ObjectHideFlags: 0
