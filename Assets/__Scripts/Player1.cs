@@ -37,45 +37,42 @@ public class Player1 : ParentPlayer {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 
-        //handles player animation
-        if(horizontal!=0||vertical!=0){
-            animator.SetFloat("Speed",1);
-        }else{
-            animator.SetFloat("Speed",0);
-        }
-        if(horizontal<0){
-            spriteRenderer.flipX=true;
-            left=true;
-        }
-        if(horizontal>0){
-            spriteRenderer.flipX=false;
-            left=false;
-        }
-
-        //handles player attack
-        if(Input.GetKeyDown(KeyCode.Space)){
-            Attack();
-        }
-
-        if(Input.GetKeyDown(KeyCode.B)){
-            Fire(left);
-        }
-
-        //moves the player
-        Move(horizontal, vertical);
-
-        //code used for player teleporting
-        if (Input.GetKeyDown(KeyCode.LeftShift)) {
-            Teleport(horizontal, vertical);
-        }
-
-        }
-        if(Time.time >= nextAttackTime) {
-            if (Input.GetKeyDown(KeyCode.Space)) {
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
+            //handles player animation
+            if(horizontal!=0||vertical!=0){
+                animator.SetFloat("Speed",1);
+            }else{
+                animator.SetFloat("Speed",0);
             }
-        }
+            if(horizontal<0){
+                spriteRenderer.flipX=true;
+                left=true;
+            }
+            if(horizontal>0){
+                spriteRenderer.flipX=false;
+                left=false;
+            }
+
+            //handles player attack
+            if (Time.time >= nextAttackTime) {
+                if (Input.GetKeyDown(KeyCode.Space)) {
+                    Attack();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.B)){
+                Fire(left);
+            }
+
+            //moves the player
+            Move(horizontal, vertical);
+
+            //code used for player teleporting
+            if (Input.GetKeyDown(KeyCode.LeftShift)) {
+                Teleport(horizontal, vertical);
+            }
+
+        }        
 
 
         //code used for invincibility

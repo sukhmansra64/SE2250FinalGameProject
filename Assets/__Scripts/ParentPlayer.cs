@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ParentPlayer : MonoBehaviour
-{
+public class ParentPlayer : MonoBehaviour{
     //variable declarations
     public GameObject player;
     protected int playerDamage;
@@ -153,7 +152,7 @@ public class ParentPlayer : MonoBehaviour
     }
 
     //resets the game and re-initializes everything
-    protected void Reset() {
+    protected virtual void Reset() {
         SceneManager.LoadScene("_Scene_1");
         playerHealth = 100;
         damageBoostCooldown = 0;
