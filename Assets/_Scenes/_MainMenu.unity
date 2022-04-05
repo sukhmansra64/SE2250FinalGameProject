@@ -801,7 +801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1314108bd3b5914784ab5f35e3f83a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstLevel: _ChooseHero
+  screen: _ChooseHero
 --- !u!224 &1408127070 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3637680727205353883, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
