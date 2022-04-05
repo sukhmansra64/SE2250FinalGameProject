@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class GhostScript : EnemyScript
 {
-    public GameObject Hero;
-    public SpriteRenderer spriteRenderer;
-
     //Adding projectile to enemy
     public GameObject projectilePrefab;
     public float projectileSpeed = 0.0005f;
