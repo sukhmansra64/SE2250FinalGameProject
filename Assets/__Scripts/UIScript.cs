@@ -6,8 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour {
     public static UIScript instance;
-    public Text scoreText, healthText, qAbilityText, eAbilityText, shiftText, levelText;
+    public Text scoreText, healthText, qAbilityText, eAbilityText, shiftText, levelText, helpText, bottomText;
     public static int score;
+    public static string message;
 
 
     private void Awake() {
@@ -42,8 +43,19 @@ public class UIScript : MonoBehaviour {
             healthText.text = "HP: 0/" + ParentPlayer.maxHealth;
         }
 
+        if(message != "") {
+            helpText.text = message;
+            Invoke("deleteMiddleText", 2f);
+        }
+
+
         qAbilityText.text = "Q: " + ParentPlayer.qAbility + "    " + ParentPlayer.publicDamageCooldown + " s";
         eAbilityText.text = "E: " + ParentPlayer.eAbility + "    " + ParentPlayer.publicInvincibilityCooldown + " s";
         shiftText.text = "Shift: " + ParentPlayer.shift + "    " + ParentPlayer.publicTeleportCooldown + " s";
+    }
+
+    void deleteMiddleText() {
+        message = "";
+        helpText.text = "";
     }
 }
