@@ -180,8 +180,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Oh No! Steve the parrot is not here and Gino is in tears. The bad guys
-    must have kidnapped him! We must check the next arena...
+  m_text: 'Steve the parrot has been found! Gino is crying from happiness and the
+    mission was a success.
+
+
+    Thank you for playing!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 256691df1db7ae843b61db5799de1170, type: 2}
   m_sharedMaterial: {fileID: -9105119571020976245, guid: 256691df1db7ae843b61db5799de1170, type: 2}
@@ -208,7 +211,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 139.3
+  m_fontSize: 127.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -277,7 +280,7 @@ GameObject:
   - component: {fileID: 394928727}
   - component: {fileID: 394928731}
   m_Layer: 5
-  m_Name: MiddleStory
+  m_Name: EndStory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4743b3a54c27dc4458aa8d126bafaa44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screen: _Scene_3
+  screen: _MainMenu
 --- !u!1 &685629051
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,7 +557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3637680727205353883, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -439
+      value: -465
       objectReference: {fileID: 0}
     - target: {fileID: 3637680727205353883, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -570,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3637680728262612975, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
       propertyPath: m_text
-      value: OK
+      value: Restart Game
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
