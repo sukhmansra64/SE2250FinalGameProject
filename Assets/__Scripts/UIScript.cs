@@ -24,9 +24,16 @@ public class UIScript : MonoBehaviour {
         if (this.gameObject.scene.name == "_Scene_1" || this.gameObject.scene.name == "_Scene_2") {
 
             levelText.text = "Level: 1";
+            bottomText.text = "Collect 200 points to advance to the next level";
         }
-        else {
+
+        else if(this.gameObject.scene.name == "_Scene_3") {
             levelText.text = "Level: 2";
+        }
+
+        else if (this.gameObject.scene.name == "_Scene_4") {
+            levelText.text = "Level: 2";
+            bottomText.text = "Destroy all enemies to rescue the parrot!";
         }
 
     }

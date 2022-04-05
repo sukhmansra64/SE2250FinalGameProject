@@ -146,10 +146,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: ba059e61db08b494f8c9468a23dedc99, type: 3}
-    m_FontSize: 80
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 5
+    m_MinSize: 0
     m_MaxSize: 80
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -363,6 +363,8 @@ MonoBehaviour:
   eAbilityText: {fileID: 4674679692310053503}
   shiftText: {fileID: 1576092165758372282}
   levelText: {fileID: 751780702}
+  helpText: {fileID: 4899315242689901303}
+  bottomText: {fileID: 184189460090141634}
 --- !u!1 &1044055922210699191
 GameObject:
   m_ObjectHideFlags: 0
