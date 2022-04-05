@@ -9,16 +9,19 @@ public class ChooseHero : MonoBehaviour
     
     public void ChooseSwordsman()
     {
+        PlayerPrefs.SetString("Hero","Swordsman");
         SceneManager.LoadScene(screen);
     }
 
     public void ChooseKnight()
     {
+        PlayerPrefs.SetString("Hero","Knight");
         SceneManager.LoadScene(screen);
     }
 
     public void ChooseGino()
     {
+        PlayerPrefs.SetString("Hero","Gino");
         SceneManager.LoadScene(screen);
     }
 }

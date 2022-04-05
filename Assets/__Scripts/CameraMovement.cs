@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour
 {
     public Transform target;
 
-    void Awake()
+    void Start()
     {
         target = GameObject.FindGameObjectsWithTag("Hero")[0].GetComponent<Transform>();
     }
