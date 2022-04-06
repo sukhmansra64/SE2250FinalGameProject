@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player1 : ParentPlayer {
 
@@ -41,8 +40,8 @@ public class Player1 : ParentPlayer {
 
     // Update is called once per frame
     void Update() {
-        //variable declaration
         if (!isDead) {
+            //variable declaration
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 
