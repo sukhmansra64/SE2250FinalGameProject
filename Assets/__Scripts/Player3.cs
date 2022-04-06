@@ -28,7 +28,7 @@ public class Player3 : ParentPlayer {
         invincibilityCooldown = 0;
 
         //initializes the speed of the player
-        speed = 1;
+        speed = 2;
 
         //initializes all of the attack specifics
         attackRange = 3.5f;
