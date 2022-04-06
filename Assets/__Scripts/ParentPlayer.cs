@@ -153,7 +153,7 @@ public class ParentPlayer : MonoBehaviour{
 
         if (invincibilityCooldown <= 0) {
             //sets the invincibility cooldown to 3 minutes and makes the player invincible, after 30 seconds invincibility will end
-            healthResetCooldown = 7;
+            healthResetCooldown = 15;
             invincibilityCooldown = 180;
             playerHealth = 10000;
         }
@@ -220,6 +220,7 @@ public class ParentPlayer : MonoBehaviour{
 
         if (collision.gameObject.tag == "Invincibility") {
             Destroy(collision.gameObject);
+            Invincibility();
             invincibilityCooldown = -1;
         }
 
