@@ -19,7 +19,7 @@ public class Player3 : ParentPlayer {
         }
 
         //initializes player damage
-        playerDamage = 25;
+        playerDamage = 50;
 
         //initializes the cooldowns so that all abilities are available off spawn
         teleportCooldown = 0;
@@ -28,10 +28,10 @@ public class Player3 : ParentPlayer {
         invincibilityCooldown = 0;
 
         //initializes the speed of the player
-        speed = 2;
+        speed = 1;
 
         //initializes all of the attack specifics
-        attackRange = 2.5f;
+        attackRange = 3.5f;
         attackRate = 1f;
         nextAttackTime = 0f;
 
