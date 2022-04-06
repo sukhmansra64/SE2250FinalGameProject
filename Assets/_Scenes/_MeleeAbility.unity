@@ -577,7 +577,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3637680728262612975, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
       propertyPath: m_text
-      value: Stab
+      value: 'Poke
+
+'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efffba1e950830d45b3066604c17a3dd, type: 3}
