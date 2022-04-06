@@ -118,7 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LaunchOffset: {x: 0, y: 0, z: 0}
-  Thrown: 0
 --- !u!58 &5744586295424495778
 CircleCollider2D:
   m_ObjectHideFlags: 0
