@@ -92,7 +92,7 @@ public class ParentPlayer : MonoBehaviour{
         }
         else if (PlayerPrefs.GetString("Attack") == "Stab") 
         {
-            Stab(left, daggerPrefab);
+            Stab(left);
         }
     }
     protected void Fire(bool left, GameObject rangedAbility)
@@ -113,20 +113,29 @@ public class ParentPlayer : MonoBehaviour{
         }
     }
 
-    protected void Stab(bool left, GameObject meleeAbility)
+    protected void Stab(bool left)
     {
-        GameObject stabGO = Instantiate<GameObject>(meleeAbility);
+        GameObject stabGO = Instantiate(daggerPrefab);
         stabGO.transform.position = transform.position;
-        Rigidbody2D rigidB = stabGO.GetComponent<Rigidbody2D>();
 
         if (!left)
         {
-            rigidB.velocity = Vector3.right * projectileSpeed;
+            stabGO.transform.position = stabGO.transform.position + new Vector3(1, 0);
+            stabGO.transform.rotation = new Quaternion(0f, 0f, 1f, 0.7071068f);
         }
         else
         {
-            rigidB.velocity = Vector3.left * projectileSpeed;
+            stabGO.transform.position = stabGO.transform.position + new Vector3(-1, 0);
+            stabGO.transform.rotation = new Quaternion(0f, 0f, -1f, 0.7071068f);
         }
+
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(stabGO.transform.position, attackRange, enemyLayers);
+
+        foreach (Collider2D enemy in hitEnemies) {
+            enemy.GetComponent<EnemyScript>().TakeDamage(playerDamage * 2);
+        }
+
+        Destroy(stabGO, 0.5f);
     }
 
     //teleport method
