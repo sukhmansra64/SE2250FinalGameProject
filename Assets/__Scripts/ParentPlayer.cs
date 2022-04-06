@@ -220,6 +220,8 @@ public class ParentPlayer : MonoBehaviour{
 
         if (collision.gameObject.tag == "Invincibility") {
             Destroy(collision.gameObject);
+            invincibilityCooldown = -1;
+            playerHealthBeforeInvincibility = playerHealth;
             Invincibility();
             invincibilityCooldown = -1;
         }
