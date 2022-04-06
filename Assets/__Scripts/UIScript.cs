@@ -16,7 +16,7 @@ public class UIScript : MonoBehaviour {
     }
 
     // Start is called before the first frame update
-    void Start(){
+    void Start() {
         //sets the text of qAbilityText, eAbilityText, and shiftText to their respective abilities
         qAbilityText.text = "Q: " + ParentPlayer.qAbility;
         eAbilityText.text = "E: " + ParentPlayer.eAbility;
@@ -31,7 +31,7 @@ public class UIScript : MonoBehaviour {
         }
 
         //if the active scene is 3 then the level text is updated to display level 2
-        else if(this.gameObject.scene.name == "_Scene_3") {
+        else if (this.gameObject.scene.name == "_Scene_3") {
             levelText.text = "Level: 2";
         }
 
@@ -44,12 +44,12 @@ public class UIScript : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update(){
+    void Update() {
         //sets the scoreText to display the number of points the player has
         scoreText.text = "Points: " + score;
 
         //if the player's health is above 0 it displays their health, otherwise it displays 0 that way there is no negatives
-        if(ParentPlayer.health > 0) {
+        if (ParentPlayer.health > 0) {
             healthText.text = "HP: " + ParentPlayer.health + "/" + ParentPlayer.maxHealth;
         }
         else {
